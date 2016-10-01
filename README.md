@@ -1,7 +1,7 @@
 foscam-python-lib
 =================
 
-Foscam Python Library for H.264 IP Cameras (FI9821W/P/HD816W/P)
+Foscam Python Library for H.264 IP Cameras (FI9821W/P,HD816W/P,C2)
 
 TODO
 ----
@@ -45,4 +45,37 @@ This example illustrates the use of a callback function when the command complet
 
     mycam = FoscamCamera('192.168.0.110', 88, 'admin', 'foscam', daemon=False)
     mycam.get_ip_info(print_ipinfo)
+```
+
+### foscmd usage:
+You can call this library by creating a camera.cfg file
+```
+[camera0]
+hostname: 192.168.9.30
+port: 443
+username: admin
+password: password
+
+```
+ 
+
+```
+python foscmd.py -h
+usage: foscmd.py [-h] [-i | -t | -n | -M | -m | -s] [cameraname]
+
+positional arguments:
+  cameraname            Sets individual camera
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i, --get_ip_info     Gets camera info
+  -t, --get_system_time
+                        Gets camera time
+  -n, --get_dev_name    Gets camera name
+  -M, --enable_motion_detection
+                        Turns on motion detection
+  -m, --disable_motion_detection
+                        Turns off motion detection
+  -s, --get_dev_state   Gets dev state
+
 ```
