@@ -56,9 +56,14 @@ port: 443
 username: admin
 password: password
 
+[camera1]
+hostname: 192.168.9.31
+port: 443
+username: admin
+password: password
 ```
  
-
+Command usage example foscmd.py -M  would enable motion on all cameras or foscmd.py -M camera1 for just one.
 ```
 python foscmd.py -h
 usage: foscmd.py [-h] [-i | -t | -n | -M | -m | -s] [cameraname]
